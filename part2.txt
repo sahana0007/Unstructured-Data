@@ -1,0 +1,214 @@
+The Lucene Demo:
+
+1. java -cp .:lucene-8.7.0/demo/lucene-demo-8.7.0.jar:lucene-8.7.0/core/lucene-core-8.7.0.jar:lucene-8.7.0/queryparser/lucene-queryparser-8.7.0.jar:lucene-8.7.0/analysis/common/lucene-analyzers-common-8.7.0.jar MySearchFiles < testcases.txt
+
+Ans: Enter query: 
+Searching for: his fiery sword
+5 total matching documents
+1. documents/RJ3.txt
+2. documents/RJ5.txt
+3. documents/RJ4.txt
+4. documents/RJ9.txt
+5. documents/RJ6.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: alas o love
+5 total matching documents
+1. documents/RJ6.txt
+2. documents/RJ8.txt
+3. documents/RJ7.txt
+4. documents/RJ1.txt
+5. documents/RJ10.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: and
+8 total matching documents
+1. documents/RJ3.txt
+2. documents/RJ10.txt
+3. documents/RJ5.txt
+4. documents/RJ2.txt
+5. documents/RJ4.txt
+6. documents/RJ8.txt
+7. documents/RJ7.txt
+8. documents/RJ1.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: reckon
+0 total matching documents
+Enter query: 
+Searching for: q
+0 total matching documents
+Enter query: 
+Searching for: love
+4 total matching documents
+1. documents/RJ6.txt
+2. documents/RJ7.txt
+3. documents/RJ1.txt
+4. documents/RJ10.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: fair
+3 total matching documents
+1. documents/RJ9.txt
+2. documents/RJ10.txt
+3. documents/RJ1.txt
+
+2.Lucene 8.7.0 demo did not use stopwords. This is because it has 'and' results in matching documents. Also, this can be cross verified in the java code ÔMyStandardAnalyzer.javaÕ where EMPTY_SET was returned. 
+
+3. Lucene 8.7.0 demo did not do stemming. 
+
+4. The similarity metric used by the Lucene 8.7.0 demo to retrieve documents is Okapi BM25 by default. 
+It cannot be deduced by looking at the results only. 
+
+Stopping: 
+
+(base) sahanachakravarty@Sahanas-MacBook-Air Part2 % java -cp .:lucene-8.7.0/demo/lucene-demo-8.7.0.jar:lucene-8.7.0/core/lucene-core-8.7.0.jar:lucene-8.7.0/queryparser/lucene-queryparser-8.7.0.jar:lucene-8.7.0/analysis/common/lucene-analyzers-common-8.7.0.jar MySearchFiles < testcases.txt
+Enter query: 
+Searching for: fiery sword
+1 total matching documents
+1. documents/RJ3.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: alas love
+4 total matching documents
+1. documents/RJ6.txt
+2. documents/RJ7.txt
+3. documents/RJ1.txt
+4. documents/RJ10.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: and
+8 total matching documents
+1. documents/RJ3.txt
+2. documents/RJ10.txt
+3. documents/RJ5.txt
+4. documents/RJ2.txt
+5. documents/RJ4.txt
+6. documents/RJ8.txt
+7. documents/RJ7.txt
+8. documents/RJ1.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: reckon
+0 total matching documents
+Enter query: 
+Searching for: q
+0 total matching documents
+Enter query: 
+Searching for: love
+4 total matching documents
+1. documents/RJ6.txt
+2. documents/RJ7.txt
+3. documents/RJ1.txt
+4. documents/RJ10.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: fair
+3 total matching documents
+1. documents/RJ9.txt
+2. documents/RJ10.txt
+3. documents/RJ1.txt
+Press (q)uit or enter number to jump to a page.
+Enter query:
+
+Stemming:
+
+(base) sahanachakravarty@Sahanas-MacBook-Air Part2 % java -cp .:lucene-8.7.0/demo/lucene-demo-8.7.0.jar:lucene-8.7.0/core/lucene-core-8.7.0.jar:lucene-8.7.0/queryparser/lucene-queryparser-8.7.0.jar:lucene-8.7.0/analysis/common/lucene-analyzers-common-8.7.0.jar MySearchFiles < testcases.txt
+Enter query: 
+Searching for: fieri sword
+1 total matching documents
+1. documents/RJ3.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: ala love
+5 total matching documents
+1. documents/RJ6.txt
+2. documents/RJ7.txt
+3. documents/RJ8.txt
+4. documents/RJ1.txt
+5. documents/RJ10.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: and
+8 total matching documents
+1. documents/RJ3.txt
+2. documents/RJ10.txt
+3. documents/RJ5.txt
+4. documents/RJ2.txt
+5. documents/RJ4.txt
+6. documents/RJ8.txt
+7. documents/RJ7.txt
+8. documents/RJ1.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: reckon
+1 total matching documents
+1. documents/RJ10.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: love
+5 total matching documents
+1. documents/RJ6.txt
+2. documents/RJ7.txt
+3. documents/RJ8.txt
+4. documents/RJ1.txt
+5. documents/RJ10.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: fair
+3 total matching documents
+1. documents/RJ9.txt
+2. documents/RJ10.txt
+3. documents/RJ1.txt
+Press (q)uit or enter number to jump to a page.
+Enter query:
+
+Similarity:
+
+Enter query: 
+Searching for: fieri sword
+1 total matching documents
+1. documents/RJ3.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: ala love
+5 total matching documents
+1. documents/RJ6.txt
+2. documents/RJ7.txt
+3. documents/RJ8.txt
+4. documents/RJ1.txt
+5. documents/RJ10.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: and
+8 total matching documents
+1. documents/RJ3.txt
+2. documents/RJ5.txt
+3. documents/RJ10.txt
+4. documents/RJ2.txt
+5. documents/RJ4.txt
+6. documents/RJ8.txt
+7. documents/RJ7.txt
+8. documents/RJ1.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: reckon
+1 total matching documents
+1. documents/RJ10.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: love
+5 total matching documents
+1. documents/RJ6.txt
+2. documents/RJ7.txt
+3. documents/RJ8.txt
+4. documents/RJ1.txt
+5. documents/RJ10.txt
+Press (q)uit or enter number to jump to a page.
+Enter query: 
+Searching for: fair
+3 total matching documents
+1. documents/RJ9.txt
+2. documents/RJ10.txt
+3. documents/RJ1.txt
+Press (q)uit or enter number to jump to a page.
